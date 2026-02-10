@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="inddex.css">
+    <meta charset="UTF-8">
+    <title>VapeZone | Tienda Vape</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Bacon<span>Vapes</span></h1>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Productos</a>
+            <a href="#">Ofertas</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Vapea con estilo</h2>
+            <p>Los mejores vapes, sabores y accesorios del mercado</p>
+            <button>Ver productos</button>
+        </div>
+
+        <div class="hero-mascota">
+            <img src="img/mascota3.png" alt="Mascota Bacom Vapes">
+        </div>
+    </section>
+
+
+    <section class="productos">
+        <h3>🔥 Productos destacados</h3>
+
+
+        <div class="grid">
+
+            <div class="card">
+                <img src="img/producto1.jpg" alt="Vape Neon X" onclick="abrirModal(this)" data-nombre="Vape Neon X"
+                    data-desc="Vape desechable de 10,000 puffs con sabor Mango Ice. Vapor intenso, batería duradera y diseño premium."
+                    data-precio="$250 MXN">
+
+                <h4>WAka GO</h4>
+                <p>10K puffs · Mango Ice</p>
+                <span>$250 MXN</span>
+                <button class="btn-buy">Comprar</button>
+            </div>
+
+
+            <div class="card">
+                <img src="img/producto3.jpg.png" alt="Vape Neon X" onclick="abrirModal(this)" data-nombre="Vape Neon X"
+                    data-desc="Vape desechable de 15,000 puffs con sabor Fresco Ice. Vapor intenso, batería duradera y diseño premium."
+                    data-precio="$250 MXN">
+                <h4>Waka soPRO</h4>
+                <p>15K puffs · Blueberry</p>
+                <span>$380 MXN</span>
+                <button>Comprar</button>
+            </div>
+
+            <div class="card">
+                <img src="img/producto4.png" alt="Vape Neon X" onclick="abrirModal(this)" data-nombre="Vape Neon X"
+                    data-desc="Vape desechable de 36,000 puffs con sabor Sandia Ice. Vapor intenso, batería duradera y diseño premium."
+                    data-precio="$250 MXN">
+                <h4>Waka Burst</h4>
+                <p>36K puffs · Watermelon</p>
+                <span>$280 MXN</span>
+                <button>Comprar</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="promo">
+        <div class="promo-content">
+            <img src="img/mascota4.png" alt="Promoción Vape">
+            <div class="promo-text">
+                <h3>🔥 NUEVA COLECCIÓN</h3>
+                <p>Sabores intensos · Más puffs · Mejor precio</p>
+                <button>Ver promoción</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="productos">
+        <h3>🔥 Promociones</h3>
+
+        <div class="grid">
+            <div class="card">
+                <img src="img/473813850_122201127194060932_8518800138663285692_n.jpg" alt="Vape">
+                <h4>Vape Neon X</h4>
+                <p>1500 puffs · Mango Ice</p>
+                <span>$299 MXN</span>
+                <button>Comprar</button>
+            </div>
+
+            <div class="card">
+                <img src="img/producto1.jpg" alt="Vape">
+                <h4>Vape Storm</h4>
+                <p>2000 puffs · Blueberry</p>
+                <span>$349 MXN</span>
+                <button>Comprar</button>
+            </div>
+
+            <div class="card">
+                <img src="img/producto2.jpg.png" alt="Vape">
+                <h4>Cloud Pro</h4>
+                <p>3000 puffs · Watermelon</p>
+                <span>$399 MXN</span>
+                <button>Comprar</button>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <footer>
+        <p>© 2026 VapeZone · Solo para mayores de edad</p>
+         <p>© 2026 HGL </p>
+    </footer>
+
+    <!-- HTLM del moidal -->
+    <div id="modalProducto" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+
+            <img id="modalImg" src="">
+            <h3 id="modalNombre"></h3>
+            <p id="modalDesc"></p>
+            <span id="modalPrecio"></span>
+            <button>Comprar</button>
+        </div>
+    </div>
+
+
+</body>
+
+<!-- script del modal o funcinamiento del modal -->
+<script>
+    function abrirModal(img) {
+        document.getElementById("modalProducto").style.display = "flex";
+        document.getElementById("modalImg").src = img.src;
+        document.getElementById("modalNombre").innerText = img.dataset.nombre;
+        document.getElementById("modalDesc").innerText = img.dataset.desc;
+        document.getElementById("modalPrecio").innerText = img.dataset.precio;
+    }
+
+    function cerrarModal() {
+        document.getElementById("modalProducto").style.display = "none";
+    }
+</script>
+
+</html>
