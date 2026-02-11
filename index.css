@@ -87,13 +87,21 @@ body {
 .hero-mascota img {
     max-width: 420px;
     animation: float 4s ease-in-out infinite;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
 }
 
 @keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0); }
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 /* ===================== */
@@ -175,7 +183,7 @@ body {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(5px);
     z-index: 2000;
     justify-content: center;
@@ -236,60 +244,83 @@ body {
 }
 
 @keyframes zoom {
-    from { transform: scale(0.7); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 /* ===================== */
 /* PROMO */
 /* ===================== */
 .promo {
-    padding: 60px;
-    background: linear-gradient(120deg, #141421, #0b0b0f);
+    padding: 60px 20px;
 }
 
 .promo-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 40px;
-    background: #0f0f1a;
-    border-radius: 25px;
-    padding: 40px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    /* 👈 centra todo */
+    gap: 25px;
+    padding: 35px 25px;
+    border-radius: 30px;
+    background: linear-gradient(140deg, #1a1a35, #0f0f1a);
+    text-align: center;
 }
 
+/* ===================== */
+/* IMAGEN PROMO */
 .promo-content img {
-    max-width: 380px;
-    border-radius: 20px;
+    max-width: 300px;
+    /* 👈 más grande */
+    width: 100%;
+    margin: 0 auto;
+    /* 👈 centrada */
+    display: block;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+    animation: float 4s ease-in-out infinite;
 }
 
+/* ===================== */
+/* TEXTO PROMO */
 .promo-text h3 {
-    font-size: 32px;
-    margin-bottom: 10px;
-    color: #7f5cff;
+    font-size: 28px;
 }
 
 .promo-text p {
     font-size: 16px;
-    color: #ccc;
-    margin-bottom: 20px;
+    opacity: 0.9;
 }
 
 .promo-text button {
-    padding: 12px 30px;
-    border: none;
-    background: #00e5ff;
-    color: #000;
-    font-weight: 600;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.3s;
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    border-radius: 40px;
 }
 
-.promo-text button:hover {
-    background: #7f5cff;
-    color: #fff;
+/* ===================== */
+/* ANIMACIÓN SUAVE */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
+
 
 /* ===================== */
 /* FOOTER */
@@ -302,133 +333,226 @@ footer {
     color: #777;
 }
 
+
 /* ===================== */
-/* 📱 RESPONSIVE */
+/* 📱 MOBILE FIRST DESIGN */
 /* ===================== */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 
-  .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 90px 25px 60px; /* más altura */
+    body {
+        background: radial-gradient(circle at top, #141433, #0b0b0f);
     }
 
-    .hero-text {
-        max-width: 100%;
+    /* ===================== */
+    /* HEADER MOBILE */
+    /* ===================== */
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 18px 30px;
+        background: rgba(10, 10, 20, 0.85);
+        backdrop-filter: blur(12px);
+
+        transition: box-shadow 0.3s ease, background 0.3s ease;
     }
 
-    .hero-text h2 {
-        font-size: 44px;        /* 🔥 más impacto */
-        line-height: 1.2;
-        margin-bottom: 20px;
+    .header.scrolled {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        background: rgba(10, 10, 20, 0.95);
     }
 
-    .hero-text p {
-        font-size: 18px;
-        margin-bottom: 30px;
+
+
+    .header h1 {
+        font-size: 22px;
+        font-weight: 700;
     }
 
-    .hero-text button {
-        font-size: 18px;
-        padding: 16px 36px;
+    .header h1 span {
+        color: #7f5cff;
     }
 
-    .hero-mascota {
-        margin-top: 40px;
-    }
-
-    .hero-mascota img {
-        max-width: 360px;      /* 👈 más grande */
-        width: 100%;
-    }
-
-    .productos {
-        padding: 60px 30px;
-    }
-
-    @media (max-width: 900px) {
-
-    /* GRID */
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
-    }
-
-    /* CARD GRANDE */
-    .card {
+    /* ===================== */
+    /* BOTÓN HAMBURGUESA */
+    /* ===================== */
+    .menu-toggle {
+        width: 32px;
+        height: 26px;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        padding: 28px 22px;
-        border-radius: 24px;
-        background: linear-gradient(160deg, #1a1a30, #0f0f1a);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+        justify-content: space-between;
+        cursor: pointer;
     }
 
-    /* IMAGEN GRANDE */
-    .card img {
+    .menu-toggle span {
+        height: 3px;
         width: 100%;
-        max-width: 260px;
-        height: auto;
-        margin-bottom: 20px;
+        background: #fff;
+        border-radius: 4px;
+        transition: 0.4s;
     }
 
-    /* TEXTO */
-    .card h4 {
-        font-size: 24px;
-        margin-bottom: 10px;
-        text-align: center;
+    /* ===================== */
+    /* NAV MOBILE */
+    /* ===================== */
+    .nav {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: linear-gradient(160deg, #1a1a35, #0f0f1a);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        padding: 20px;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+
+        /* OCULTO POR DEFECTO */
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none;
+        transition: 0.35s ease;
     }
 
-    .card p {
+    .nav a {
+        color: #fff;
+        text-decoration: none;
         font-size: 16px;
-        margin-bottom: 12px;
-        text-align: center;
-        color: #bbb;
+        font-weight: 500;
     }
 
-    .card span {
-        font-size: 22px;
-        margin-bottom: 18px;
+    .nav a:hover {
         color: #00e5ff;
     }
 
-    /* BOTÓN DE COMPRA */
+    /* ===================== */
+    /* NAV ACTIVO */
+    /* ===================== */
+    .nav.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    /* ===================== */
+    /* HERO MOBILE */
+    /* ===================== */
+    .hero {
+        flex-direction: column;
+        padding: 80px 20px 40px;
+        min-height: auto;
+        border-radius: 0 0 40px 40px;
+    }
+
+    .hero-text h2 {
+        font-size: 34px;
+        font-weight: 800;
+        line-height: 1.1;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+        opacity: 0.9;
+    }
+
+    .hero-text button {
+        width: 100%;
+        padding: 18px;
+        font-size: 18px;
+        border-radius: 40px;
+        background: #000;
+    }
+
+    .hero-mascota img {
+        max-width: 280px;
+        margin-top: 30px;
+    }
+
+    /* ===================== */
+    /* PRODUCTOS */
+    /* ===================== */
+    .productos {
+        padding: 50px 20px;
+    }
+
+    .productos h3 {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    /* ===================== */
+    /* CARD MOBILE */
+    /* ===================== */
+    .card {
+        background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+        backdrop-filter: blur(10px);
+        border-radius: 28px;
+        padding: 26px 22px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    .card img {
+        max-height: 240px;
+        margin-bottom: 18px;
+    }
+
+    .card h4 {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .card p {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .card span {
+        font-size: 26px;
+        font-weight: 700;
+        margin: 12px 0 18px;
+    }
+
     .card button {
         width: 100%;
         padding: 16px;
         font-size: 18px;
-        border-radius: 30px;
-        margin-top: 10px;
-    }
-}
-
-
-    .promo {
-        padding: 40px 30px;
+        border-radius: 40px;
+        background: linear-gradient(135deg, #7f5cff, #00e5ff);
+        color: #000;
+        font-weight: 600;
     }
 
-    .promo-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .promo-content img {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .hero-text h2 {
-        font-size: 30px;
-    }
-
-    .hero-text p {
-        font-size: 16px;
-    }
-
-    .card {
+    /* ===================== */
+    /* FOOTER */
+    /* ===================== */
+    footer {
+        font-size: 13px;
         padding: 20px;
+        opacity: 0.7;
+    }
+}
+
+/* ===================== */
+/* 📱 EXTRA SMALL */
+@media (max-width: 420px) {
+    .hero-text h2 {
+        font-size: 28px;
+    }
+
+    .card img {
+        max-height: 200px;
     }
 }

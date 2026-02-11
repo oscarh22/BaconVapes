@@ -2,27 +2,38 @@
 <html lang="es">
 
 <head>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="inddex.css">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>VapeZone | Tienda Vape</title>
-    <link rel="stylesheet" href="style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
-<p>hola mundo
 
-</p>
+
 <body>
 
     <header class="header">
         <h1>Bacon<span>Vapes</span></h1>
-        <nav>
+
+        <!-- BOTÓN HAMBURGUESA -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav class="nav">
             <a href="#">Inicio</a>
             <a href="#">Productos</a>
             <a href="#">Ofertas</a>
             <a href="#">Contacto</a>
         </nav>
     </header>
+
+
 
     <section class="hero">
         <div class="hero-text">
@@ -123,7 +134,7 @@
 
     <footer>
         <p>© 2026 VapeZone · Solo para mayores de edad</p>
-         <p>© 2026 HGL </p>
+        <p>© 2026 HGL </p>
     </footer>
 
     <!-- HTLM del moidal -->
@@ -143,18 +154,6 @@
 </body>
 
 <!-- script del modal o funcinamiento del modal -->
-<script>
-    function abrirModal(img) {
-        document.getElementById("modalProducto").style.display = "flex";
-        document.getElementById("modalImg").src = img.src;
-        document.getElementById("modalNombre").innerText = img.dataset.nombre;
-        document.getElementById("modalDesc").innerText = img.dataset.desc;
-        document.getElementById("modalPrecio").innerText = img.dataset.precio;
-    }
-
-    function cerrarModal() {
-        document.getElementById("modalProducto").style.display = "none";
-    }
-</script>
+<script src="index.js"></script>
 
 </html>
