@@ -123,7 +123,7 @@
 
         <div class="novedades-container">
 
-            
+
             <div class="card-novedad promo">
                 <span class="badge">Próximamente</span>
                 <h3>2x1 en Vapes Desechables</h3>
@@ -131,7 +131,7 @@
                 <button class="btn-alerta">Ver más</button>
             </div>
 
-            
+
             <div class="card-novedad nuevo">
                 <span class="badge nuevo-badge">Nuevo</span>
                 <h3>Vape X-Pro 5000 Puffs</h3>
@@ -139,7 +139,7 @@
                 <button class="btn-alerta">Descubrir</button>
             </div>
 
-         
+
             <div class="card-novedad promo">
                 <span class="badge">Oferta Especial</span>
                 <h3>30% OFF en Accesorios</h3>
@@ -156,7 +156,7 @@
         <p>© 2026 HGL </p>
     </footer>
 
-   
+
     <div id="modalProducto" class="modal">
         <div class="modal-content">
             <span class="close" onclick="cerrarModal()">&times;</span>
@@ -171,25 +171,27 @@
         </div>
     </div>
 
-    
+
     <div class="modal" id="modalCompra">
         <div class="modal-content">
             <span class="close" onclick="cerrarModalCompra()">×</span>
 
             <h3 id="nombreProducto"></h3>
 
-            
+
             <div class="cantidad">
-                <button onclick="cambiarCantidad(-1)">−</button>
-                <span id="cantidad">1</span>
-                <button onclick="cambiarCantidad(1)">+</button>
+                <button class="btn-cantidad menos" onclick="cambiarCantidad(-1)">−</button>
+                <span id="cantidad" class="numero">1</span>
+                <button class="btn-cantidad mas" onclick="cambiarCantidad(1)">+</button>
             </div>
+
+
 
             <p class="precio-total">
                 Total: <strong id="precioTotal">$0 MXN</strong>
             </p>
 
-            
+
             <div class="pago">
                 <p>Método de pago:</p>
 
@@ -204,7 +206,7 @@
 
             <input type="text" id="cliente" placeholder="Tu nombre">
 
-            
+
             <div class="entrega">
                 <button onclick="seleccionarEntrega('local')">📍 Soy local</button>
                 <button onclick="seleccionarEntrega('foraneo')">🚚 Foráneo</button>
@@ -214,7 +216,7 @@
                 ❌ Por el momento no tenemos servicio fuera de la ciudad
             </p>
 
-            
+
             <div class="ubicaciones" id="ubicaciones">
                 <p>Dirección de entrega:</p>
 
@@ -226,7 +228,7 @@
         </div>
     </div>
 
-    
+
     <div id="promo-alerta" class="promo-alerta">
         🚀 ¡Atento a la página!
         <br>

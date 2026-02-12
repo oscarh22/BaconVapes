@@ -95,10 +95,18 @@ function cerrarModalCompra() {
 }
 
 function cambiarCantidad(valor) {
-  cantidad += valor;
-  if (cantidad < 1) cantidad = 1;
-  document.getElementById('cantidad').innerText = cantidad;
-  actualizarPrecio();
+    const cantidad = document.getElementById("cantidad");
+    let numeroActual = parseInt(cantidad.textContent);
+    
+    numeroActual += valor;
+    if (numeroActual < 1) numeroActual = 1;
+
+    cantidad.textContent = numeroActual;
+
+    cantidad.classList.add("animar");
+    setTimeout(() => {
+        cantidad.classList.remove("animar");
+    }, 200);
 }
 
 function actualizarPrecio() {

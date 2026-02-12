@@ -299,25 +299,87 @@ body {
     }
 }
 
+
 .cantidad {
-    display: flex;
-    justify-content: center;
+    display: inline-flex;
     align-items: center;
-    gap: 20px;
-    margin: 20px 0;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    padding: 10px 15px;
+    border-radius: 60px;
+    gap: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.4),
+        inset 0 0 15px rgba(255, 255, 255, 0.05);
 }
 
-.cantidad button {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    font-size: 22px;
-}
 
-.cantidad span {
+.btn-cantidad {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    border: none;
     font-size: 22px;
     font-weight: bold;
+    cursor: pointer;
+    background: #111;
+    color: white;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
 }
+
+
+.btn-cantidad::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 16px;
+    background: linear-gradient(45deg, #00f7ff, #ff00c8, #7b00ff, #00f7ff);
+    background-size: 300%;
+    animation: borderMove 4s linear infinite;
+    z-index: -1;
+}
+
+
+@keyframes borderMove {
+    0% { background-position: 0% }
+    100% { background-position: 300% }
+}
+
+
+.btn-cantidad:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(0, 247, 255, 0.6);
+}
+
+
+.btn-cantidad:active {
+    transform: scale(0.92);
+}
+
+
+.numero {
+    font-size: 26px;
+    font-weight: 700;
+    min-width: 45px;
+    text-align: center;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #00f7ff, #ff00c8);
+    box-shadow: 0 0 15px rgba(255, 0, 200, 0.5);
+    transition: transform 0.2s ease;
+}
+
+
+.numero.animar {
+    transform: scale(1.2);
+}
+
 
 .precio-total {
     font-size: 18px;
