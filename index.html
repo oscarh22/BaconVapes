@@ -18,7 +18,7 @@
     <header class="header">
         <h1>Bacon<span>Vapes</span></h1>
 
-        <!-- BOTÓN HAMBURGUESA -->
+      
         <div class="menu-toggle" onclick="toggleMenu()">
             <span></span>
             <span></span>
@@ -32,8 +32,6 @@
             <a href="#">Contacto</a>
         </nav>
     </header>
-
-
 
     <section class="hero">
         <div class="hero-text">
@@ -62,7 +60,10 @@
                 <h4>WAka GO</h4>
                 <p>10K puffs · Mango Ice</p>
                 <span>$250 MXN</span>
-                <button class="btn-buy">Comprar</button>
+                <button class="btn-buy" onclick="abrirCompra('WAka GO', 250)">
+                    Comprar
+                </button>
+
             </div>
 
 
@@ -73,7 +74,10 @@
                 <h4>Waka soPRO</h4>
                 <p>15K puffs · Blueberry</p>
                 <span>$380 MXN</span>
-                <button>Comprar</button>
+                <button class="btn-buy" onclick="abrirCompra('WAka GO', 380)">
+                    Comprar
+                </button>
+
             </div>
 
             <div class="card">
@@ -83,7 +87,10 @@
                 <h4>Waka Burst</h4>
                 <p>36K puffs · Watermelon</p>
                 <span>$280 MXN</span>
-                <button>Comprar</button>
+                <button class="btn-buy" onclick="abrirCompra('WAka GO', 280)">
+                    Comprar
+                </button>
+
             </div>
 
         </div>
@@ -93,11 +100,13 @@
     <section class="promo">
         <div class="promo-content">
             <img src="img/mascota4.png" alt="Promoción Vape">
+
             <div class="promo-text">
                 <h3>🔥 NUEVA COLECCIÓN</h3>
                 <p>Sabores intensos · Más puffs · Mejor precio</p>
                 <button>Ver promoción</button>
             </div>
+
         </div>
     </section>
 
@@ -137,7 +146,7 @@
         <p>© 2026 HGL </p>
     </footer>
 
-    <!-- HTLM del moidal -->
+    
     <div id="modalProducto" class="modal">
         <div class="modal-content">
             <span class="close" onclick="cerrarModal()">&times;</span>
@@ -146,14 +155,72 @@
             <h3 id="modalNombre"></h3>
             <p id="modalDesc"></p>
             <span id="modalPrecio"></span>
-            <button>Comprar</button>
+            <button class="btn-buy" onclick="comprarDesdeImagen()">
+                Comprar
+            </button>
         </div>
     </div>
 
+ 
+    <div class="modal" id="modalCompra">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModalCompra()">×</span>
+
+            <h3 id="nombreProducto"></h3>
+
+            
+            <div class="cantidad">
+                <button onclick="cambiarCantidad(-1)">−</button>
+                <span id="cantidad">1</span>
+                <button onclick="cambiarCantidad(1)">+</button>
+            </div>
+
+            <p class="precio-total">
+                Total: <strong id="precioTotal">$0 MXN</strong>
+            </p>
+
+           
+            <div class="pago">
+                <p>Método de pago:</p>
+
+                <button class="btn-pago" data-pago="Efectivo" onclick="seleccionarPago(this)">
+                    💵 Efectivo
+                </button>
+
+                <button class="btn-pago" data-pago="Transferencia" onclick="seleccionarPago(this)">
+                    🏦 Transferencia
+                </button>
+            </div>
+
+            <input type="text" id="cliente" placeholder="Tu nombre">
+
+           
+            <div class="entrega">
+                <button onclick="seleccionarEntrega('local')">📍 Soy local</button>
+                <button onclick="seleccionarEntrega('foraneo')">🚚 Foráneo</button>
+            </div>
+
+            <p class="msg-foraneo" id="msgForaneo">
+                ❌ Por el momento no tenemos servicio fuera de la ciudad
+            </p>
+
+            
+            <div class="ubicaciones" id="ubicaciones">
+                <p>Dirección de entrega:</p>
+
+                <input type="text" id="direccion" placeholder="Ej. Calle Hidalgo #123, Col. Centro">
+
+                <button onclick="enviarWhats()">Confirmar pedido</button>
+            </div>
+
+        </div>
+    </div>
 
 </body>
 
-<!-- script del modal o funcinamiento del modal -->
+
+
+
 <script src="index.js"></script>
 
 </html>
