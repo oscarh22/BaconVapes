@@ -148,3 +148,16 @@ function enviarWhats() {
   const url = `https://wa.me/5213513483622?text=${encodeURIComponent(mensaje)}`;
   window.open(url, '_blank');
 }
+
+const botones = document.querySelectorAll('.btn-alerta');
+  const alerta = document.getElementById('promo-alerta');
+
+  botones.forEach(boton => {
+    boton.addEventListener('click', () => {
+      alerta.classList.add('mostrar');
+
+      setTimeout(() => {
+        alerta.classList.remove('mostrar');
+      }, 3500);
+    });
+  });

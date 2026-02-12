@@ -458,6 +458,104 @@ body {
 }
 
 
+.novedades {
+  padding: 80px 10%;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  text-align: center;
+  color: white;
+}
+
+.titulo-seccion {
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: #00f7ff;
+}
+
+.novedades-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card-novedad {
+  background: #111;
+  border-radius: 20px;
+  padding: 30px;
+  width: 300px;
+  position: relative;
+  transition: 0.3s ease;
+  border: 1px solid #222;
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.1);
+}
+
+.card-novedad:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(0, 247, 255, 0.4);
+}
+
+.card-novedad h3 {
+  margin: 15px 0;
+  color: #fff;
+}
+
+.card-novedad p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.card-novedad button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  background: #00f7ff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card-novedad button:hover {
+  background: #00c4cc;
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #ff0055;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.nuevo-badge {
+  background: #00ff88;
+  color: #000;
+}
+
+.promo-alerta {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #00f7ff, #ff00c8);
+  color: white;
+  padding: 20px 30px;
+  border-radius: 15px;
+  font-weight: bold;
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.6);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+  z-index: 1000;
+}
+
+.promo-alerta.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 @keyframes float {
     0% {

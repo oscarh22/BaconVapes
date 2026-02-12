@@ -25,19 +25,21 @@
             <span></span>
         </div>
 
-        <nav class="nav">
-            <a href="#">Inicio</a>
+         <nav class="nav">
+            <a href="#inicio">Inicio</a>
             <a href="#">Productos</a>
             <a href="#">Ofertas</a>
             <a href="#">Contacto</a>
         </nav>
     </header>
 
-    <section class="hero">
+    <section id="inicio" class="hero">
         <div class="hero-text">
             <h2>Vapea con estilo</h2>
             <p>Los mejores vapes, sabores y accesorios del mercado</p>
-            <button>Ver productos</button>
+           <a href="#productos">
+                <button>Ver productos</button>
+            </a>
         </div>
 
         <div class="hero-mascota">
@@ -110,35 +112,36 @@
         </div>
     </section>
 
-    <section class="productos">
-        <h3>🔥 Promociones</h3>
+     <section id="novedades" class="novedades">
+        <h2 class="titulo-seccion">🔥 Próximas Promociones & Nuevos Productos</h2>
 
-        <div class="grid">
-            <div class="card">
-                <img src="img/473813850_122201127194060932_8518800138663285692_n.jpg" alt="Vape">
-                <h4>Vape Neon X</h4>
-                <p>1500 puffs · Mango Ice</p>
-                <span>$299 MXN</span>
-                <button>Comprar</button>
+        <div class="novedades-container">
+
+            
+            <div class="card-novedad promo">
+                <span class="badge">Próximamente</span>
+                <h3>2x1 en Vapes Desechables</h3>
+                <p>Disfruta tus sabores favoritos al doble sin pagar de más.</p>
+                <button class="btn-alerta">Ver más</button>
             </div>
 
-            <div class="card">
-                <img src="img/producto1.jpg" alt="Vape">
-                <h4>Vape Storm</h4>
-                <p>2000 puffs · Blueberry</p>
-                <span>$349 MXN</span>
-                <button>Comprar</button>
+          
+            <div class="card-novedad nuevo">
+                <span class="badge nuevo-badge">Nuevo</span>
+                <h3>Vape X-Pro 5000 Puffs</h3>
+                <p>Más duración, más sabor y diseño premium.</p>
+                <button class="btn-alerta">Descubrir</button>
             </div>
 
-            <div class="card">
-                <img src="img/producto2.jpg.png" alt="Vape">
-                <h4>Cloud Pro</h4>
-                <p>3000 puffs · Watermelon</p>
-                <span>$399 MXN</span>
-                <button>Comprar</button>
+            
+            <div class="card-novedad promo">
+                <span class="badge">Oferta Especial</span>
+                <h3>30% OFF en Accesorios</h3>
+                <p>Resistencias, líquidos y más al mejor precio.</p>
+                <button class="btn-alerta">Comprar</button>
             </div>
+
         </div>
-    </section>
     </section>
 
     <footer>
@@ -214,6 +217,12 @@
             </div>
 
         </div>
+    </div>
+
+     <div id="promo-alerta" class="promo-alerta">
+        🚀 ¡Atento a la página!
+        <br>
+        Muy pronto lanzamientos y promociones exclusivas 🔥
     </div>
 
 </body>
