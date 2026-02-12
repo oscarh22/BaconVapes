@@ -145,12 +145,9 @@ function enviarWhats() {
 💳 Pago: ${pago}
 📍 Dirección: ${direccion}`;
 
-  const url = `https://wa.me/5213513070384?text=${encodeURIComponent(mensaje)}`;
+  const url = `https://wa.me/5213513483622?text=${encodeURIComponent(mensaje)}`;
   window.open(url, '_blank');
 }
-
-
-
 
 
 
