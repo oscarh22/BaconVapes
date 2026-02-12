@@ -55,10 +55,10 @@ function comprarDesdeImagen() {
     return;
   }
 
-
+ 
   document.getElementById("modalProducto").style.display = "none";
 
-
+ 
   abrirCompra(productoModal, precioModal);
 }
 
@@ -71,7 +71,7 @@ function abrirModal(img) {
   document.getElementById("modalDesc").innerText = img.dataset.desc;
   document.getElementById("modalPrecio").innerText = img.dataset.precio;
 
-
+  
   productoModal = img.dataset.nombre;
   precioModal = parseInt(img.dataset.precio.replace('$', ''));
 }
@@ -161,3 +161,5 @@ const botones = document.querySelectorAll('.btn-alerta');
       }, 3500);
     });
   });
+
+

@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="inddex.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,26 +18,27 @@
     <header class="header">
         <h1>Bacon<span>Vapes</span></h1>
 
-      
+
         <div class="menu-toggle" onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
         </div>
 
-         <nav class="nav">
+        <nav class="nav">
             <a href="#inicio">Inicio</a>
             <a href="#">Productos</a>
             <a href="#">Ofertas</a>
             <a href="#">Contacto</a>
         </nav>
+
     </header>
 
     <section id="inicio" class="hero">
         <div class="hero-text">
             <h2>Vapea con estilo</h2>
             <p>Los mejores vapes, sabores y accesorios del mercado</p>
-           <a href="#productos">
+            <a href="#productos">
                 <button>Ver productos</button>
             </a>
         </div>
@@ -48,7 +49,8 @@
     </section>
 
 
-    <section class="productos">
+    <section id="productos" class="productos">
+
         <h3>🔥 Productos destacados</h3>
 
 
@@ -82,6 +84,7 @@
 
             </div>
 
+
             <div class="card">
                 <img src="img/producto4.png" alt="Vape Neon X" onclick="abrirModal(this)" data-nombre="Vape Neon X"
                     data-desc="Vape desechable de 36,000 puffs con sabor Sandia Ice. Vapor intenso, batería duradera y diseño premium."
@@ -106,13 +109,16 @@
             <div class="promo-text">
                 <h3>🔥 NUEVA COLECCIÓN</h3>
                 <p>Sabores intensos · Más puffs · Mejor precio</p>
-                <button>Ver promoción</button>
+                <a href="#productos">
+                    <button>Ver promoción</button>
+                </a>
+
             </div>
 
         </div>
     </section>
 
-     <section id="novedades" class="novedades">
+    <section id="novedades" class="novedades">
         <h2 class="titulo-seccion">🔥 Próximas Promociones & Nuevos Productos</h2>
 
         <div class="novedades-container">
@@ -125,7 +131,7 @@
                 <button class="btn-alerta">Ver más</button>
             </div>
 
-          
+            
             <div class="card-novedad nuevo">
                 <span class="badge nuevo-badge">Nuevo</span>
                 <h3>Vape X-Pro 5000 Puffs</h3>
@@ -133,7 +139,7 @@
                 <button class="btn-alerta">Descubrir</button>
             </div>
 
-            
+         
             <div class="card-novedad promo">
                 <span class="badge">Oferta Especial</span>
                 <h3>30% OFF en Accesorios</h3>
@@ -144,12 +150,13 @@
         </div>
     </section>
 
+
     <footer>
         <p>© 2026 VapeZone · Solo para mayores de edad</p>
         <p>© 2026 HGL </p>
     </footer>
 
-    
+   
     <div id="modalProducto" class="modal">
         <div class="modal-content">
             <span class="close" onclick="cerrarModal()">&times;</span>
@@ -164,7 +171,7 @@
         </div>
     </div>
 
- 
+    
     <div class="modal" id="modalCompra">
         <div class="modal-content">
             <span class="close" onclick="cerrarModalCompra()">×</span>
@@ -182,7 +189,7 @@
                 Total: <strong id="precioTotal">$0 MXN</strong>
             </p>
 
-           
+            
             <div class="pago">
                 <p>Método de pago:</p>
 
@@ -197,7 +204,7 @@
 
             <input type="text" id="cliente" placeholder="Tu nombre">
 
-           
+            
             <div class="entrega">
                 <button onclick="seleccionarEntrega('local')">📍 Soy local</button>
                 <button onclick="seleccionarEntrega('foraneo')">🚚 Foráneo</button>
@@ -219,11 +226,13 @@
         </div>
     </div>
 
-     <div id="promo-alerta" class="promo-alerta">
+    
+    <div id="promo-alerta" class="promo-alerta">
         🚀 ¡Atento a la página!
         <br>
         Muy pronto lanzamientos y promociones exclusivas 🔥
     </div>
+
 
 </body>
 
